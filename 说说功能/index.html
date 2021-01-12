@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>说说功能</title>
+    <style>
+        #say{
+            width:300px;
+            margin:0 auto;
+        }
+        #list{
+            width:300px;
+            margin:0 auto;
+        }
+        .content{
+            width:300px;
+            box-shadow: 0 3px 5px #666;
+            margin-top: 10px;
+        }
+        img{
+            border-radius: 50%;
+            width:50px;
+            height: 50px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div id="say">
+        <textarea name="" id="con" cols="30" rows="10"></textarea>
+        <input type="button" value="发表说说">
+    </div>
+    <div id="list">
+        <!-- 单个盒子div -->
+        <!-- <div class="content">
+            <img src="./img/img_1.jpg" alt="">
+            张三
+            <p>你好啊~~~</p>
+        </div> -->
+        <!-- 单个盒子div结束 -->
+    </div>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(":button").click(function(){
+           var say = $("#con").val();
+           //追加生成一个标签在指定的位置   $(html标签).appendTo() 在末尾追加一个HTML标签
+           $('<div class="content"><img src="./img/img_1.jpg" alt="">张三<p>'+say+'</p></div>').prependTo("#list");
+           $("#con").val("");
+        });
+    </script>
+</body>
+</html>
